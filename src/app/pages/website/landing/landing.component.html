@@ -14,7 +14,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle fw-semibold text-uppercase me-1" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
-              Categories
+              Categorias
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" (mouseleave)="resetSubcategories()">
               <li *ngFor="let category of categoryList" class="position-relative">
@@ -35,16 +35,16 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle redHover fw-semibold text-uppercase text-black me-1" id="navbarDropdown"
               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              pages
+              Páginas
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item">About Us</a></li>
-              <li><a class="dropdown-item">Contact Us</a></li>
-              <li><a class="dropdown-item">Terms and Conditions</a></li>
+              <li><a class="dropdown-item">Sobre Nós</a></li>
+              <li><a class="dropdown-item">Nos Contate</a></li>
+              <li><a class="dropdown-item">Termos e condições</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-semibold text-uppercase text-black me-1 hand">Contact us</a>
+            <a class="nav-link fw-semibold text-uppercase text-black me-1 hand">Nos Contate</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"><i class="fa-solid fa-magnifying-glass fs-5" style="color: #0c0d0d;"></i></a>
@@ -162,19 +162,19 @@
         [breakpoints]="{'960px': '75vw', '640px': '95vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
         <div class="row">
           <div class="col-md-12">
-            <label class="my-1 fw-semibold">Mobile Number</label>
+            <label class="my-1 fw-semibold">Tel</label>
             <input type="tel" class="form-control" name="phone" #phone="ngModel" [(ngModel)]="loginObj.UserName"
               required [pattern]="phonePattern" pInputText placeholder="Enter Mobile Number">
             <div class="validation-error" *ngIf="phone.touched || phone.dirty">
-              <div *ngIf="phone.errors?.['required']">Mobile Number is required</div>
-              <div *ngIf="phone.errors?.['pattern']">Please, Enter 10 digit Mobile Number.</div>
+              <div *ngIf="phone.errors?.['required']">O número do celular é obrigatório</div>
+              <div *ngIf="phone.errors?.['pattern']">Por favor, insira o número do celular de 10 dígitos.</div>
             </div>
           </div>
         </div>
         <div class="row mt-1">
           <div class="col-md-12">
             <div id="password-input-container">
-              <label class="my-1 fw-semibold">Password</label>
+              <label class="my-1 fw-semibold">Senha</label>
               <input [type]="showLoginPassword?'text':'password'" class="form-control" name="UserPassword"
                 #UserPassword="ngModel" required [pattern]="passwordPattern" [(ngModel)]="loginObj.UserPassword"
                 pInputText placeholder="Enter Password">
@@ -184,13 +184,13 @@
                 *ngIf="showLoginPassword == false"></span>
             </div>
             <div class="validation-error" *ngIf="UserPassword.touched || UserPassword.dirty">
-              <div *ngIf="UserPassword.errors?.['required']">Password is required</div>
-              <div *ngIf="UserPassword.errors?.['pattern']">Password must contain at least one uppercase letter, one
-                lowercase letter, one digit, and one special character (#?!&#64;$%^&*-).</div>
+              <div *ngIf="UserPassword.errors?.['required']">Senha é obrigatória</div>
+              <div *ngIf="UserPassword.errors?.['pattern']">A senha deve conter pelo menos uma letra maiúscula, uma
+                letra minúscula, um dígito e um caractere especial (#?!&#64;$%^&*-).</div>
             </div>
             <div class="mt-2">
               <div class="field field-checkbox">
-                <p-checkbox class="rememberMeTxt pe-5" [(ngModel)]="rememberMe" name="rememberMe" label="Remember me"
+                <p-checkbox class="rememberMeTxt pe-5" [(ngModel)]="rememberMe" name="rememberMe" label="Lembre-me"
                   inputId="rememberMeCheckbox" [binary]="true"></p-checkbox>
               </div>
             </div>
@@ -213,31 +213,31 @@
 <div class="row">
   <div class="col-md-12">
     <form #registerFrm="ngForm">
-      <p-dialog [header]="'Register'" [(visible)]="displayModalRegistration" [modal]="true" [style]="{width: '50vw'}"
+      <p-dialog [header]="'Registro'" [(visible)]="displayModalRegistration" [modal]="true" [style]="{width: '50vw'}"
         [breakpoints]="{'960px': '75vw', '640px': '95vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
         <div class="row">
           <div class="col-md-6">
-            <label class="my-1 fw-semibold">Name</label>
+            <label class="my-1 fw-semibold">Nome</label>
             <input type="text" class="form-control" name="Name" #Name="ngModel" [(ngModel)]="registerObj.Name" required
-              pInputText placeholder="Enter Your Name">
+              pInputText placeholder="Adicione seu nome">
             <div class="validation-error" *ngIf="Name.touched || Name.dirty">
-              <div *ngIf="Name.errors?.['required']">Name is required</div>
+              <div *ngIf="Name.errors?.['required']">Nome é obrigatório</div>
             </div>
           </div>
           <div class="col-md-6">
-            <label class="my-1 fw-semibold">Mobile</label>
+            <label class="my-1 fw-semibold">Telefone</label>
             <input type="tel" class="form-control" name="MobileNo" #MobileNo="ngModel" [pattern]="phonePattern"
-              [(ngModel)]="registerObj.MobileNo" required pInputText placeholder="Enter Mobile No">
+              [(ngModel)]="registerObj.MobileNo" required pInputText placeholder="Adicione seu telefone">
             <div class="validation-error" *ngIf="MobileNo.touched || MobileNo.dirty">
-              <div *ngIf="MobileNo.errors?.['required']">Mobile Number is required</div>
-              <div *ngIf="MobileNo.errors?.['pattern']">Please, Enter 10 digit Mobile Number.</div>
+              <div *ngIf="MobileNo.errors?.['required']">Telefone é obrigatório</div>
+              <div *ngIf="MobileNo.errors?.['pattern']">Por favor, insira o número do celular.</div>
             </div>
           </div>
         </div>
         <div class="row mt-1">
           <div class="col-md-12">
             <div id="password-input-container">
-              <label class="my-1 fw-semibold">Password</label>
+              <label class="my-1 fw-semibold">Senha</label>
               <input [type]="showRegisterPassword?'text':'password'" class="form-control" name="Password"
                 #Password="ngModel" required [pattern]="passwordPattern" [(ngModel)]="registerObj.Password" pInputText
                 placeholder="Enter Password">
@@ -247,9 +247,9 @@
                 (click)="onRegisterEyeClick()" *ngIf="showRegisterPassword == false"></span>
             </div>
             <div class="validation-error" *ngIf="Password.touched || Password.dirty">
-              <div *ngIf="Password.errors?.['required']">Password is required</div>
-              <div *ngIf="Password.errors?.['pattern']">Password must contain at least one uppercase letter, one
-                lowercase letter, one digit, and one special character (#?!&#64;$%^&*-).</div>
+              <div *ngIf="Password.errors?.['required']">Senha é obrigatório</div>
+              <div *ngIf="Password.errors?.['pattern']">A senha deve conter pelo menos uma letra maiúscula, uma
+                letra minúscula, um dígito e um caractere especial (#?!&#64;$%^&*-).</div>
             </div>
           </div>
         </div>
@@ -257,7 +257,7 @@
           <button pButton pRipple class="p-button-primary p-button-sm" label="Register" (click)="register(registerFrm)">
             <span *ngIf="isApiCallInProgress" class="spinner-border spinner-border-sm me-2"></span>
           </button>
-          <button pButton pRipple icon="pi pi-times" class="p-button-danger p-button-sm" label="Close"
+          <button pButton pRipple icon="pi pi-times" class="p-button-danger p-button-sm" label="Fechar"
             (click)="closeRegisterModal()"></button>
         </ng-template>
       </p-dialog>

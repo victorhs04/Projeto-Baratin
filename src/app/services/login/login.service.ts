@@ -25,7 +25,7 @@ export class LoginService {
         loggedInObj = {};
         sessionStorage.removeItem('bigBasket_user');
         sessionStorage.removeItem('token');
-        this.toastr.success('You have been logged out', 'Thank you');
+        this.toastr.success('Você foi deslogado', 'Obrigado');
       }
     });
   }
